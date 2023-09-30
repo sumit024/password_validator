@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+Initial release of password validator package. More improvements to follow in future;
