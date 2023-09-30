@@ -119,7 +119,7 @@ class _PasswordValidatorState extends State<PasswordValidator> {
               barRadius: const Radius.circular(20),
               lineHeight: 7,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 35),
             Row(
               //spacing: 9,
               //direction: Axis.horizontal,
@@ -170,7 +170,6 @@ class _PasswordValidatorState extends State<PasswordValidator> {
             const SizedBox(height: 9),
             Row(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.min,
