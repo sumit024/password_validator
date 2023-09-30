@@ -1,6 +1,6 @@
 A flutter package for validating your password fields. It also shows the strength of password dynamically.
 
-
+More updates to follow in package.
 
 https://github.com/sumit024/password_validator/assets/62748297/b71f89bd-587e-4f1f-9258-fc2be0b8ee82
 
