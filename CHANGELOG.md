@@ -4,3 +4,6 @@ Initial release of password validator package. More improvements to follow in fu
 
 #0.0.2
 Some minor changes regarding returned validator value.
+
+#0.0.3
+Added supporting gif
