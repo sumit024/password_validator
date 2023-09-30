@@ -216,8 +216,6 @@ class _PasswordValidatorState extends State<PasswordValidator> {
   }
 
   void updateProgress(String password) {
-    print(password.hasDigit);
-    print(numberFlag);
 
     if (widget.shouldHaveUppercase && password.containsUppercase && !upperCaseFlag) {
       setState(() {
@@ -226,7 +224,6 @@ class _PasswordValidatorState extends State<PasswordValidator> {
       });
     }
     if (widget.shouldHaveUppercase && !password.containsUppercase && progress > 0 && upperCaseFlag) {
-      print('decreasing progress');
       setState(() {
         progress -= 100;
         upperCaseFlag = false;
@@ -240,7 +237,6 @@ class _PasswordValidatorState extends State<PasswordValidator> {
       });
     }
     if (widget.shouldHaveLowercase && !password.containsLowercase && progress > 0 && lowerCaseFlag) {
-      print('decreasing progress');
       setState(() {
         progress -= 100;
         lowerCaseFlag = false;
@@ -249,21 +245,16 @@ class _PasswordValidatorState extends State<PasswordValidator> {
 
 
     if (widget.shouldHaveADigit &&password.hasDigit && !numberFlag) {
-      print('here');
       setState(() {
         progress += 100;
         numberFlag = true;
       });
-      print(progress);
     }
     if (widget.shouldHaveLowercase && !password.hasDigit && progress > 0 && numberFlag) {
-      print('decreasing progress');
-      print('here');
       setState(() {
         progress -= 100;
         numberFlag = false;
       });
-      print(progress);
     }
 
     if (isLengthAllowed(password,widget.minLength,widget.maxLength) && !charSize) {
@@ -273,7 +264,6 @@ class _PasswordValidatorState extends State<PasswordValidator> {
       });
     }
     if (!isLengthAllowed(password,widget.minLength,widget.maxLength)  && progress > 0 && charSize) {
-      print('decreasing progress');
       setState(() {
         progress -= 100;
         charSize = false;
@@ -287,14 +277,12 @@ class _PasswordValidatorState extends State<PasswordValidator> {
       });
     }
     if (widget.shouldHaveSpecialChar &&  !password.hasSpecialCharacter && progress > 0 && specialCharFlag) {
-      print('decreasing progress');
       setState(() {
         progress -= 100;
         specialCharFlag = false;
       });
     }
 
-    print('updated progress: $progress');
   }
 }
 
