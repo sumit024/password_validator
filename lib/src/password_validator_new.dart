@@ -9,6 +9,8 @@ class PasswordValidator extends StatefulWidget {
   final bool shouldHaveSpecialChar;
   final bool shouldHaveADigit;
   final Function(bool) onValidationCallback;
+  final Function(String) validatedPassword;
+
 
   const PasswordValidator(
       {required this.minLength,
@@ -18,6 +20,7 @@ class PasswordValidator extends StatefulWidget {
         required this.shouldHaveSpecialChar,
         required this.shouldHaveADigit,
         required this.onValidationCallback,
+        required this.validatedPassword,
         Key? key})
       : super(key: key);
 
@@ -35,6 +38,7 @@ class _PasswordValidatorState extends State<PasswordValidator> {
   bool specialCharFlag = false;
   bool letterFlag = false;
   bool _isPasswordVisible = false;
+
   final TextEditingController controller= TextEditingController();
 
   @override
@@ -103,7 +107,10 @@ class _PasswordValidatorState extends State<PasswordValidator> {
               obscureText: _isPasswordVisible,
               onChanged: (String value) {
                 updateProgress(value);
-                widget.onValidationCallback(progress/totalProgress==1);
+                if(progress/totalProgress==1){
+                  widget.onValidationCallback(true);
+                  widget.validatedPassword(controller.text);
+                }
               },
             ),
             const SizedBox(height: 13),
